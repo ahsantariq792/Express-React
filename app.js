@@ -25,7 +25,9 @@ app.put('/profile', (req, res) => {
 app.delete('/profile', (req, res) => {
     res.send('profile is deleted')
 })
-
+app.get("/**", (req, res, next) => {
+    res.sendFile(path.join(__dirname, "./todoapp/build/index.html"))
+})
 
 app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`)
